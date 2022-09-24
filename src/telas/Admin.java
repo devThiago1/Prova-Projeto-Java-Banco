@@ -1,4 +1,4 @@
-package person;
+package telas;
 
 public class Admin {
     
