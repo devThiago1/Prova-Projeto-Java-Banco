@@ -2,7 +2,7 @@ package telas;
 
 public class Admin {
     
-    public void main(){
-        System.out.println("hellow");
+    public int main(){
+      return 1;
     }
 }

@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int opcao; 
+        int opcao = 1; 
 
         User filhos = new User();
         Admin titular = new Admin();
@@ -20,7 +20,7 @@ public class App {
             }
 
          
-        do{
+        while(opcao != 0){
             System.out.println("            CAIXA ELETRÔNICO");
             System.out.println("Para utilização da conta, você precisa escolher o tipo de conta*");
             System.out.println("DESEJA ACESSAR COMO:");
@@ -29,14 +29,18 @@ public class App {
                 opcao = sc.nextInt();
         
             if(opcao == 1){
-                titular.main();
+               opcao = titular.main();
             }
-            if(opcao == 2){
-                filhos.main();
+            else if(opcao == 2){
+                opcao = filhos.main();
+                    if(opcao == 1){
+                        sc.close();
+                        opcao = 1;
+                    }    
+            }else{
+            System.out.println("Opção incorreta");
             }
-
-        }while(opcao != 0);
-        
+        }
         sc.close();
     }
 }
