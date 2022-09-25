@@ -7,12 +7,7 @@ public class User {
 
     public void main(){
         Scanner sc = new Scanner(System.in);
-        //Inicializar as senhas para identificação
-            int p = 1111;
-            for(int i=0; i <= 4; i++){
-                password_filho[i] = p; 
-                p = p + 1111;
-            }
+      
         //conferindo se as senhas foram inicializadas
             int k =0;
             while(k!=4){

@@ -12,6 +12,13 @@ public class App {
         User filhos = new User();
         Admin titular = new Admin();
 
+        // Inicialização de senhas para identificação dos filhos
+        int p = 1111;
+            for(int i=0; i <= 4; i++){
+                filhos.password_filho[i] = p; 
+                p = p + 1111;
+            }
+
          
         do{
             System.out.println("            CAIXA ELETRÔNICO");
