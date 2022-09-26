@@ -52,6 +52,7 @@ public class App {
             }else{
             System.out.println("Opção incorreta");
             }
+        opcao = 1;
         }while(opcao != 0);
     }
 

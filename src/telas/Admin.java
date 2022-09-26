@@ -26,6 +26,7 @@ public class Admin {
     public int login_admin(){
       
       int senha_digitada;
+      libera_acesso_admin = 0;
       
       while(libera_acesso_admin != 1){
         System.out.println("DIGITE SUA SENHA:");

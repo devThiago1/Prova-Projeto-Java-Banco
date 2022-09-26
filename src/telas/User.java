@@ -9,6 +9,8 @@ public class User {
 
     public int main(){
         //conferindo se as senhas foram inicializadas
+        libera_acesso_user = 0;
+        k = 0;
         while(k!=5){
             System.out.println(password_filho[k]);
             k++;
@@ -18,6 +20,7 @@ public class User {
         
         if(libera_acesso_user == 1){
             System.out.println("Acesso liberado, bem vindo cliente " + password_filho[k]);
+
         }
         if(libera_acesso_user == 0){
             //
@@ -33,6 +36,8 @@ public class User {
         Scanner sc = new Scanner(System.in);
         int senha_digitada;
         int contador = 0;
+        libera_acesso_user = 0;
+        k = 0;
         //  int opcao_encerrar_login = 0;
         while(libera_acesso_user != 1 && contador != 3){
             System.out.println("DIGITE SUA SENHA:");
@@ -53,7 +58,7 @@ public class User {
     if(contador == 3){
         System.out.println("SUA CONTA FOI BLOQUEADA. Contate o ADM do caixa eletrônico ou seu banco");
         libera_acesso_user = 0;
-}
+    }
         return libera_acesso_user;
 }
 
