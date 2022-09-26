@@ -54,7 +54,6 @@ public class User {
         System.out.println("SUA CONTA FOI BLOQUEADA. Contate o ADM do caixa eletrônico ou seu banco");
         libera_acesso_user = 0;
 }
-        sc.close();
         return libera_acesso_user;
 }
 

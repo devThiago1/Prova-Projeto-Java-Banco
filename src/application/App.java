@@ -33,7 +33,7 @@ public class App {
             System.out.println("DESEJA ACESSAR COMO:");
             System.out.println("    1 -- TITULAR");
             System.out.println("    2 -- DEPENDENTE");
-            System.out.println("    0 -- ENCERRAR");
+            System.out.println("    0 -- ENCERRAR ");
                 option = sc.nextInt();
         
             if(option == 1){
