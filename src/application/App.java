@@ -17,7 +17,7 @@ public class App {
         User filhos = new User();
         Admin titular = new Admin();
 
-        // Inicialização de senhas para identificação dos filhos
+        // Inicialização de senhas para identificação dos filhos e do ADM
         int p_admin = 1010;
         int p_user = 1111;
             for(int i=0; i <= 4; i++){
