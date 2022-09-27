@@ -32,7 +32,7 @@ public class App {
             titular.password_admin[0] = p_admin;
 
             
-            
+            //inicializador de notas
             int nota_dois = 2;
             int nota_dez = 10;
             int nota_vinte = 20;
