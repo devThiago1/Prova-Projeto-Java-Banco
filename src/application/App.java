@@ -1,7 +1,11 @@
 package application;
 import java.util.Scanner;
+
+import notas.Contagem;
 import telas.Admin;
 import telas.User;
+
+
 
 public class App {
     public static void main(String[] args) {
@@ -16,6 +20,7 @@ public class App {
 
         User filhos = new User();
         Admin titular = new Admin();
+        Contagem contagem = new Contagem();
 
         // Inicialização de senhas para identificação dos filhos e do ADM
         int p_admin = 1010;
@@ -25,6 +30,30 @@ public class App {
                 p_user = p_user + 1111;
             }
             titular.password_admin[0] = p_admin;
+
+            
+            
+            int nota_dois = 2;
+            int nota_dez = 10;
+            int nota_vinte = 20;
+            int nota_cinquenta = 50;
+            for(int k=0;k<=4; k++){
+                for(int n=0; n<=20;n++){
+                    if(k == 0){
+                        contagem.notas[k][n] = nota_dois;
+                    }
+                    if(k == 1){
+                        contagem.notas[k][n] = nota_dez;
+                    }
+                    if(k == 2){
+                        contagem.notas[k][n] = nota_vinte;
+                    }
+                    if(k == 3){
+                        contagem.notas[k][n] = nota_cinquenta;
+                    }
+                }
+            }
+
 
         opcao = 1;
         do{

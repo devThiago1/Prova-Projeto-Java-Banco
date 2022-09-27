@@ -1,5 +1,5 @@
 package notas;
 
-public class deposito {
+public class Deposito {
     
 }

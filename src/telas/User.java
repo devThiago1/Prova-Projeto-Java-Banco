@@ -1,14 +1,25 @@
 package telas;
 import java.util.Scanner;
 
+import notas.Contagem;
+//import notas.Deposito;
+import notas.Saque;
+//import notas.Saldo;
+
 public class User {
     public int password_filho[] = new int[6];
     public int k =0;
     public int libera_acesso_user;
     public int opcao_encerrar;
+    public int opcao_movimentacao;
+    public int saque;
+
+    Saque saque_user = new Saque();
+    Contagem contagem = new Contagem();
 
     public int main(){
-        //conferindo se as senhas foram inicializadas
+        int contagem_notas;
+        Scanner sc = new Scanner(System.in);        //conferindo se as senhas foram inicializadas
         libera_acesso_user = 0;
         k = 0;
         while(k!=5){
@@ -19,8 +30,19 @@ public class User {
         libera_acesso_user = login_filho();
         
         if(libera_acesso_user == 1){
-            System.out.println("Acesso liberado, bem vindo cliente " + password_filho[k]);
-
+            System.out.println("Acesso liberado, bem vindo cliente \n" + password_filho[k]);
+            System.out.println("1 -- SAQUE");
+            System.out.println("1 -- SALDO");
+                opcao_movimentacao = sc.nextInt();
+            if(opcao_movimentacao == 1){
+               // saque = saque_user.main();
+               contagem_notas = contagem.inicializador_notas();
+            }
+        
+        
+        
+        
+        
         }
         if(libera_acesso_user == 0){
             //

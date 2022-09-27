@@ -1,5 +1,5 @@
 package notas;
 
-public class saldo {
+public class Saldo{
     
 }
