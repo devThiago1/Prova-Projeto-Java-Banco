@@ -1,11 +1,11 @@
 package telas;
 import java.util.Scanner;
-
+ 
 import notas.Contagem;
 //import notas.Deposito;
 import notas.Saque;
 //import notas.Saldo;
-
+ 
 public class User {
     public int password_filho[] = new int[6];
     public int k =0;
@@ -13,12 +13,14 @@ public class User {
     public int opcao_encerrar;
     public int opcao_movimentacao;
     public int saque;
-
+ 
     Saque saque_user = new Saque();
     Contagem contagem = new Contagem();
-
+ 
+ 
+   
     public int main(){
-        int contagem_notas;
+        int notas_inicializadas;
         Scanner sc = new Scanner(System.in);        //conferindo se as senhas foram inicializadas
         libera_acesso_user = 0;
         k = 0;
@@ -26,23 +28,24 @@ public class User {
             System.out.println(password_filho[k]);
             k++;
             }
-       
+        notas_inicializadas = contagem.init_notas();
         libera_acesso_user = login_filho();
-        
+       
         if(libera_acesso_user == 1){
             System.out.println("Acesso liberado, bem vindo cliente \n" + password_filho[k]);
             System.out.println("1 -- SAQUE");
-            System.out.println("1 -- SALDO");
+            System.out.println("2 -- SALDO");
+            System.out.println("3 -- DEPOSITO");
                 opcao_movimentacao = sc.nextInt();
             if(opcao_movimentacao == 1){
-               // saque = saque_user.main();
-               contagem_notas = contagem.inicializador_notas();
+                saque = saque_user.main();
+ 
             }
-        
-        
-        
-        
-        
+       
+       
+       
+       
+       
         }
         if(libera_acesso_user == 0){
             //
@@ -50,10 +53,10 @@ public class User {
         opcao_encerrar = 1;
     return opcao_encerrar;
     }
-
-
-
-
+ 
+ 
+ 
+ 
     public int login_filho(){
         Scanner sc = new Scanner(System.in);
         int senha_digitada;
@@ -64,7 +67,7 @@ public class User {
         while(libera_acesso_user != 1 && contador != 3){
             System.out.println("DIGITE SUA SENHA:");
                 senha_digitada = sc.nextInt();
-            k = 0;
+                k = 0;
         while(senha_digitada != password_filho[k] && k != 5){
             k++;
         }
@@ -83,8 +86,7 @@ public class User {
     }
         return libera_acesso_user;
 }
-
-
-
+ 
+ 
+ 
 }
-
