@@ -32,8 +32,13 @@ public class App {
             titular.password_admin[0] = p_admin;
 
             
+<<<<<<< HEAD
           /*   //inicializador de notas
             int nota_dois = 2;
+=======
+            //inicializador de notas
+          /*   int nota_dois = 2;
+>>>>>>> d6421b97cc7424e05814ab2ea84fb646eea6ac94
             int nota_dez = 10;
             int nota_vinte = 20;
             int nota_cinquenta = 50;
@@ -53,7 +58,11 @@ public class App {
                     }
                 }
             }
+<<<<<<< HEAD
 */
+=======
+            */
+>>>>>>> d6421b97cc7424e05814ab2ea84fb646eea6ac94
 
         opcao = 1;
         do{

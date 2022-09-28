@@ -38,8 +38,12 @@ public class User {
             System.out.println("3 -- DEPOSITO");
                 opcao_movimentacao = sc.nextInt();
             if(opcao_movimentacao == 1){
+<<<<<<< HEAD
                 saque = saque_user.main();
  
+=======
+               saque = saque_user.main();
+>>>>>>> d6421b97cc7424e05814ab2ea84fb646eea6ac94
             }
        
        
