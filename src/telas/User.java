@@ -20,15 +20,15 @@ public class User {
  
    
     public int main(){
-        int notas_inicializadas;
         Scanner sc = new Scanner(System.in);        //conferindo se as senhas foram inicializadas
         libera_acesso_user = 0;
         k = 0;
+
+
         while(k!=5){
             System.out.println(password_filho[k]);
             k++;
             }
-        notas_inicializadas = contagem.init_notas();
         libera_acesso_user = login_filho();
        
         if(libera_acesso_user == 1){
@@ -38,12 +38,7 @@ public class User {
             System.out.println("3 -- DEPOSITO");
                 opcao_movimentacao = sc.nextInt();
             if(opcao_movimentacao == 1){
-<<<<<<< HEAD
-                saque = saque_user.main();
- 
-=======
                saque = saque_user.main();
->>>>>>> d6421b97cc7424e05814ab2ea84fb646eea6ac94
             }
        
        

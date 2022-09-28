@@ -32,37 +32,6 @@ public class App {
             titular.password_admin[0] = p_admin;
 
             
-<<<<<<< HEAD
-          /*   //inicializador de notas
-            int nota_dois = 2;
-=======
-            //inicializador de notas
-          /*   int nota_dois = 2;
->>>>>>> d6421b97cc7424e05814ab2ea84fb646eea6ac94
-            int nota_dez = 10;
-            int nota_vinte = 20;
-            int nota_cinquenta = 50;
-            for(int k=0;k<=4; k++){
-                for(int n=0; n<=20;n++){
-                    if(k == 0){
-                        contagem.notas[k][n] = nota_dois;
-                    }
-                    if(k == 1){
-                        contagem.notas[k][n] = nota_dez;
-                    }
-                    if(k == 2){
-                        contagem.notas[k][n] = nota_vinte;
-                    }
-                    if(k == 3){
-                        contagem.notas[k][n] = nota_cinquenta;
-                    }
-                }
-            }
-<<<<<<< HEAD
-*/
-=======
-            */
->>>>>>> d6421b97cc7424e05814ab2ea84fb646eea6ac94
 
         opcao = 1;
         do{
