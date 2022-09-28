@@ -35,8 +35,7 @@ public class User {
             System.out.println("1 -- SALDO");
                 opcao_movimentacao = sc.nextInt();
             if(opcao_movimentacao == 1){
-               // saque = saque_user.main();
-               contagem_notas = contagem.inicializador_notas();
+               saque = saque_user.main();
             }
         
         

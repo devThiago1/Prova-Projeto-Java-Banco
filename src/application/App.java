@@ -33,7 +33,7 @@ public class App {
 
             
             //inicializador de notas
-            int nota_dois = 2;
+          /*   int nota_dois = 2;
             int nota_dez = 10;
             int nota_vinte = 20;
             int nota_cinquenta = 50;
@@ -53,7 +53,7 @@ public class App {
                     }
                 }
             }
-
+            */
 
         opcao = 1;
         do{
