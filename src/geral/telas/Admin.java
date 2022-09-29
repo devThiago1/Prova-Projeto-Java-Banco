@@ -1,4 +1,4 @@
-package telas;
+package geral.telas;
 import java.util.Scanner;
 
 public class Admin {

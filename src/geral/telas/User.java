@@ -1,8 +1,10 @@
-package telas;
+package geral.telas;
 import java.util.Scanner;
-import notas.Contagem;
-import notas.Saque;
-import notas.Saldo;
+
+import geral.application.App;
+import geral.notas.Contagem;
+import geral.notas.Saldo;
+import geral.notas.Saque;
 
  
 public class User {
@@ -16,6 +18,7 @@ public class User {
     Saque saque_user = new Saque();
     Contagem contagem = new Contagem();
     Saldo saldo = new Saldo();
+    App app = new App();
  
  
    
@@ -30,9 +33,10 @@ public class User {
             k++;
             }
         libera_acesso_user = login_filho();
+        
        for(int k=0;k<=2;k++){
         if(libera_acesso_user == 1){
-            System.out.println("Acesso liberado, bem vindo cliente \n" + password_filho[k]);
+           // System.out.println("Acesso liberado, bem vindo cliente \n" + password_filho[k]);
             System.out.println("1 -- SAQUE");
             System.out.println("2 -- SALDO");
             System.out.println("3 -- DEPOSITO");
@@ -41,7 +45,7 @@ public class User {
                saque_user.main();
             }
             if(opcao_movimentacao == 2){
-                System.out.println(saldo.saldo_caixa());
+                System.out.println(saque_user.getSaldo_atual());
             }
         }
         if(libera_acesso_user == 0){

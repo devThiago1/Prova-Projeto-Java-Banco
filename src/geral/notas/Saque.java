@@ -1,16 +1,24 @@
-package notas;
-import notas.Saldo;
-import notas.Contagem;
+package geral.notas;
 import java.util.Scanner;
 
-import javax.xml.validation.ValidatorHandler;
+import geral.application.App;
  
 
 public class Saque{
-    Contagem contagem = new Contagem();
+    App app = new App();
     Saldo saldo = new Saldo();
+    Contagem contagem = new Contagem();
     public int valor_saque;
+    private int saldo_atual;
     
+    public int getSaldo_atual() {
+        return saldo_atual;
+    }
+
+    public void setSaldo_atual(int saldo_atual) {
+        this.saldo_atual = saldo_atual;
+    }
+
     public int main(){
         Scanner sc = new Scanner(System.in);  
         int q_notaDois = 0, q_notaDez = 0, q_notaVinte = 0, q_notaCinquenta = 0; 
@@ -69,12 +77,15 @@ public class Saque{
                 System.out.println("ERRO* saque inválido");
             }else{
                 contagem.setNotas_dois(valor_dois);
-                System.out.println(contagem.getNotas_dois());
                 contagem.setNotas_dez(valor_dez);
                 contagem.setNotas_vinte(valor_vinte);
                 contagem.setNotas_cinquenta(valor_cinquenta);
                 System.out.println("Saque efetuado com sucesso");
                 valida_saque = 1;
+                saldo_atual += contagem.getNotas_dois();
+                saldo_atual += contagem.getNotas_dez();
+                saldo_atual += contagem.getNotas_vinte();
+                saldo_atual += contagem.getNotas_cinquenta();
             }
         }while(valida_saque != 1);
       

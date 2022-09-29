@@ -1,8 +1,8 @@
-package notas;
+package geral.notas;
 
-public class Saldo{
-    Contagem contagem = new Contagem();
-        
+
+ public class Saldo{
+    Contagem contagem = new Contagem();        
         public int saldo_caixa(){
             int saldo_total_caixa=0;
 
