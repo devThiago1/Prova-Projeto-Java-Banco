@@ -1,10 +1,9 @@
 package telas;
 import java.util.Scanner;
- 
 import notas.Contagem;
-//import notas.Deposito;
 import notas.Saque;
-//import notas.Saldo;
+import notas.Saldo;
+
  
 public class User {
     public int password_filho[] = new int[6];
@@ -16,6 +15,7 @@ public class User {
  
     Saque saque_user = new Saque();
     Contagem contagem = new Contagem();
+    Saldo saldo = new Saldo();
  
  
    
@@ -30,7 +30,7 @@ public class User {
             k++;
             }
         libera_acesso_user = login_filho();
-       
+       for(int k=0;k<=2;k++){
         if(libera_acesso_user == 1){
             System.out.println("Acesso liberado, bem vindo cliente \n" + password_filho[k]);
             System.out.println("1 -- SAQUE");
@@ -38,17 +38,16 @@ public class User {
             System.out.println("3 -- DEPOSITO");
                 opcao_movimentacao = sc.nextInt();
             if(opcao_movimentacao == 1){
-               saque = saque_user.main();
+               saque_user.main();
             }
-       
-       
-       
-       
-       
+            if(opcao_movimentacao == 2){
+                System.out.println(saldo.saldo_caixa());
+            }
         }
         if(libera_acesso_user == 0){
             //
         }
+    }
         opcao_encerrar = 1;
     return opcao_encerrar;
     }
