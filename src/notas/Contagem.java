@@ -1,5 +1,4 @@
-package geral.notas;
-
+package notas;
 
 public class Contagem{
 
@@ -7,13 +6,19 @@ private int notas_dois ;
 private int notas_dez ;
 private int notas_vinte ;
 private int notas_cinquenta ;
-public Contagem(){
-    this.notas_dois = 40;
-    this.notas_dez = 200;
-    this.notas_vinte = 400;
-    this.notas_cinquenta = 1000;
-}
-
+    public Contagem(){
+        this.notas_dois = 40;
+        this.notas_dez = 200;
+        this.notas_vinte = 400;
+        this.notas_cinquenta = 1000;
+    }
+    public int repor_notas_totais(){
+        this.notas_dois = 40;
+        this.notas_dez = 200;
+        this.notas_vinte = 400;
+        this.notas_cinquenta = 1000;
+    return 1;
+    }
     public int getNotas_dois() {
         return notas_dois;
     }
@@ -39,4 +44,3 @@ public Contagem(){
         this.notas_cinquenta -= notas_cinquenta;
     }
 }
-

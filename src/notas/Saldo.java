@@ -1,4 +1,4 @@
-package geral.notas;
+package notas;
 
 
  public class Saldo{
