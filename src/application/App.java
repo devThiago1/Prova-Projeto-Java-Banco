@@ -1,22 +1,21 @@
 package application;
 import java.util.Scanner;
-
 import telas.Admin;
 import telas.User;
 
 
 public class App {
-
-    public static void main(String[] args) {
+ 
+        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int opcao_admin; 
         int opcao_user;
         int opcao; 
         int option;
-
-        User filhos = new User();
+        
         Admin titular = new Admin();
+        User filhos = new User();
         // Inicialização de senhas para identificação dos filhos e do ADM
         int p_admin = 1010;
         int p_user = 1111;
@@ -58,5 +57,4 @@ public class App {
         opcao = 1;
         }while(opcao != 0);
     }
-
-}
+  }

@@ -10,10 +10,6 @@ public class Admin {
     public int opcao_encerrar;
     public int acesso;
     public int i;
-    public int notas_dois_repor;
-    public int notas_dez_repor;
-    public int notas_vinte_repor;
-    public int notas_cinquenta_repor;
     private int Contas_bloqueadas[] = new int[6];
 
     public int[] getContas_bloqueadas() {
@@ -83,10 +79,10 @@ public class Admin {
 
     public int repor_notas(){
         int repor;
-        notas_dois_repor = 20 - (contagem.getNotas_dois() / 2);
-        notas_dez_repor = 20 - (contagem.getNotas_dez() / 10);
-        notas_vinte_repor = 20 - (contagem.getNotas_vinte() / 20);
-        notas_cinquenta_repor = 20 - (contagem.getNotas_cinquenta() / 20);
+        int notas_dois_repor = 20 - (contagem.getNotas_dois() / 2);
+        int notas_dez_repor = 20 - (contagem.getNotas_dez() / 10);
+        int notas_vinte_repor = 20 - (contagem.getNotas_vinte() / 20);
+        int notas_cinquenta_repor = 20 - (contagem.getNotas_cinquenta() / 50);
 
           System.out.println("NOTAS FALTOSAS");
           System.out.println("R$2: " + notas_dois_repor);
@@ -96,7 +92,7 @@ public class Admin {
           System.out.println("PARA REPOR TODAS AUTOMATICAMENTE, DIGITE 1");
             repor = sc.nextInt();
           if(repor == 1){
-            contagem.Contagem();
+            contagem.repor_notas_totais();
           }
     return 1;
     }
