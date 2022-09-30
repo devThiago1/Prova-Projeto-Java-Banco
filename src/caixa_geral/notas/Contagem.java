@@ -1,4 +1,4 @@
-package notas;
+package caixa_geral.notas;
 
 public class Contagem{
 

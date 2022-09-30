@@ -1,4 +1,4 @@
-package application;
+package caixa_geral.application;
 import java.util.Scanner;
 
 import caixa_geral.telas.Admin;

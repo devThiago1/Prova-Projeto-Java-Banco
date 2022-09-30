@@ -1,7 +1,7 @@
-package notas;
+package caixa_geral.notas;
 import java.util.Scanner;
 
-import application.App;
+import caixa_geral.application.App;
  
 
 public class Saque{

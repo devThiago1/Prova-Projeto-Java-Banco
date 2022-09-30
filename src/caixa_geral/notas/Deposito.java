@@ -1,4 +1,4 @@
-package notas;
+package caixa_geral.notas;
 import java.util.Scanner;
 
 
@@ -13,7 +13,7 @@ public class Deposito {
 
 
     public void setSaldo_user(int saldo_user) {
-        this.saldo_user = saldo_user;
+        this.saldo_user += saldo_user;
     }
 
 

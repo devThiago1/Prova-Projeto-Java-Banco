@@ -1,7 +1,7 @@
-package telas;
+package caixa_geral.telas;
 import java.util.Scanner;
 
-import notas.Contagem;
+import caixa_geral.notas.Contagem;
 
 public class Admin {
     Scanner sc = new Scanner(System.in);
