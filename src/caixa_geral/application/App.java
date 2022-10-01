@@ -13,9 +13,6 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int opcao_admin; 
-        int opcao_user;
-        int opcao; 
         int option;
 
         atm_operations caixa_operacao = new atm_operations();
@@ -30,7 +27,6 @@ public class App {
         password_admin[0] = p_admin;
 
 
-        opcao = 1;
         do{
             System.out.println("            CAIXA ELETRÔNICO");
             System.out.println("Para utilização da conta, você precisa escolher o tipo de conta*");
@@ -42,11 +38,10 @@ public class App {
         
             if(option == 1){
                 int senha_digitada;
-                int repor = 1;
-                int libera_acesso_admin = 0;  
+                int libera_acesso_admin = 1;  
                 int opcao_movimentacao_admin;
       
-                    while(libera_acesso_admin != 1){
+                    while(libera_acesso_admin != 0){
                         System.out.println("DIGITE SUA SENHA:");
                             senha_digitada = sc.nextInt();
         
@@ -67,7 +62,7 @@ public class App {
                                // System.out.println(getContas_bloqueadas());
                             }
                             if(opcao_movimentacao_admin == 2){
-                                caixa_operacao.repor_notas(caixa_operacao.getNotas_dois(), caixa_operacao.getNotas_dez(), caixa_operacao.getNotas_vinte(), caixa_operacao.getNotas_cinquenta(), caixa_operacao.getSaldo_atual());
+                               libera_acesso_admin = caixa_operacao.repor_notas(caixa_operacao.getNotas_dois(), caixa_operacao.getNotas_dez(), caixa_operacao.getNotas_vinte(), caixa_operacao.getNotas_cinquenta(), caixa_operacao.getSaldo_atual());
                             }   
                             if(opcao_movimentacao_admin == 0){
                                 libera_acesso_admin = 0;
@@ -127,12 +122,10 @@ public class App {
                     }
                 }else if(option == 0){
                 sc.close();
-                opcao = 0;
             }else{
             System.out.println("Opção incorreta");
-            opcao = 0;
             }
-        }while(opcao != 0);
+        }while(option != 0);
     }
 
 }

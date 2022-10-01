@@ -18,12 +18,7 @@ public class atm_operations{
     public void setSaldo_atual(int saldo_atual) {
         this.saldo_atual -= saldo_atual;
     }
-    public void repor_notas_totais(){
-        this.notas_dois = 40;
-        this.notas_dez = 200;
-        this.notas_vinte = 400;
-        this.notas_cinquenta = 1000;
-    }
+
     public int getNotas_dois() {
         return notas_dois;
     }
@@ -50,7 +45,7 @@ public class atm_operations{
     }
 
 
-    public void repor_notas(int q_notaDois, int q_notaDez, int q_notaVinte, int q_notaCinquenta, int saldo){
+    public int repor_notas(int q_notaDois, int q_notaDez, int q_notaVinte, int q_notaCinquenta, int saldo){
         Scanner sc = new Scanner(System.in);
         int repor;
         int notas_dois_repor;
@@ -73,8 +68,14 @@ public class atm_operations{
           System.out.println("PARA REPOR TODAS AUTOMATICAMENTE, DIGITE 1");
             repor = sc.nextInt();
           if(repor == 1){
-            repor_notas_totais();
+            this.notas_dois = 40;
+            this.notas_dez = 200;
+            this.notas_vinte = 400;
+            this.notas_cinquenta = 1000; 
+            this.saldo_atual = 1640;   
+        return 1;
           }
+    return 1;
     }
 
     public int saque(){
