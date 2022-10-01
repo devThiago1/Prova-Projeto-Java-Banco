@@ -1,9 +1,10 @@
 package caixa_geral.application;
+import caixa_geral.options.Permissions;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import caixa_geral.options.account_operations;
-import caixa_geral.options.atm_operations;
+import caixa_geral.options.Account_operations;
+import caixa_geral.options.Atm_operations;
 
 
 
@@ -13,11 +14,13 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        int bloqueado = 0;
         int option;
         int contador = 0;   
-        atm_operations caixa_operacao = new atm_operations();
-        account_operations conta_operacao = new account_operations();
+
+        Atm_operations caixa_operacao = new Atm_operations();
+        Account_operations conta_operacao = new Account_operations();
+        Permissions permissao = new Permissions();
         // Inicialização de senhas para identificação dos filhos e do ADM
         int p_admin = 1010;
         int p_user = 1111;
@@ -36,7 +39,6 @@ public class App {
             System.out.println("    2 -- DEPENDENTE");
             System.out.println("    0 -- ENCERRAR");
                 option = sc.nextInt();
-        
             if(option == 1){
                 int senha_digitada;
                 int libera_acesso_admin = 1;  
@@ -61,7 +63,10 @@ public class App {
                                 System.out.println("0 -- ENCERRAR");
                                     opcao_movimentacao_admin = sc.nextInt();
                                 if(opcao_movimentacao_admin == 1){
-                                    // System.out.println(getContas_bloqueadas());
+                                    bloqueado = permissao.blockages();
+                                    if(bloqueado == 0){
+                                        contador = 0;
+                                    }
                                 }
                                 if(opcao_movimentacao_admin == 2){
                                     libera_acesso_admin = caixa_operacao.repor_notas(caixa_operacao.getNotas_dois(), caixa_operacao.getNotas_dez(), caixa_operacao.getNotas_vinte(), caixa_operacao.getNotas_cinquenta(), caixa_operacao.getSaldo_atual());
@@ -78,7 +83,7 @@ public class App {
                 int senha_digitada;
                 int opcao_encerrar = 1;
                 int opcao_movimentacao;
-                    while(libera_acesso_user != 1 && contador != 3){
+                    while(libera_acesso_user != 1 && contador != 3 && bloqueado != 1){
                         System.out.println("DIGITE SUA SENHA:");
                             senha_digitada = sc.nextInt();
                         k = 0;
@@ -103,13 +108,11 @@ public class App {
                                     caixa_operacao.saque();
                                 }
                                 if(opcao_movimentacao == 2){
-                                    System.out.println(conta_operacao.getSaldo_user(password_filho[k]));
+                                    System.out.println("SALDO ATUAL DO CLIENTE" + password_filho[k]);
+                                    System.out.println("R$" + conta_operacao.getSaldo_user(password_filho[k]));
                                 }
                                 if(opcao_movimentacao == 3){
                                     conta_operacao.deposito(password_filho[k]);
-                                }
-                                if(opcao_movimentacao == 4){
-                                    caixa_operacao.repor_notas(caixa_operacao.getNotas_dois(), caixa_operacao.getNotas_dez(), caixa_operacao.getNotas_vinte(), caixa_operacao.getNotas_cinquenta(), caixa_operacao.getSaldo_atual());
                                 }
                                 if(opcao_movimentacao == 0){
                                     opcao_encerrar = 0;
@@ -120,6 +123,7 @@ public class App {
                     }
                     if(contador == 3){
                         System.out.println("ACESSO DE CONTAS DOS DEPENDENTE BLOQUEADO. Contate-o o titular para que libere o acesso*");
+                        bloqueado = 1;
                     }
                 }else if(option == 0){
                 sc.close();

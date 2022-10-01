@@ -3,7 +3,7 @@ import java.util.Scanner;
 
  
 
-public class atm_operations{
+public class Atm_operations{
     public int valor_saque;
     private int saldo_atual = 1640;
     private int notas_dois = 40;
@@ -80,7 +80,7 @@ public class atm_operations{
     }
 
     public int saque(){
-        atm_operations saque = new atm_operations();
+        Atm_operations saque = new Atm_operations();
         Scanner sc = new Scanner(System.in);  
         int valida_saque = 0;
 

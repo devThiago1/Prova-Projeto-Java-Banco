@@ -2,7 +2,7 @@ package caixa_geral.options;
 import java.util.Scanner;
 
 
-public class account_operations {
+public class Account_operations {
     public int i;
     private int saldo_user[] = new int[6];
     private int saldo;
