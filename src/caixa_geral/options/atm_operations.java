@@ -72,7 +72,8 @@ public class atm_operations{
             this.notas_dez = 200;
             this.notas_vinte = 400;
             this.notas_cinquenta = 1000; 
-            this.saldo_atual = 1640;   
+            this.saldo_atual = 1640;  
+            System.out.println("NOTAS E O SALDO DO CAIXA ELETRÔNICO FORAM REINICIADOS"); 
         return 1;
           }
     return 1;

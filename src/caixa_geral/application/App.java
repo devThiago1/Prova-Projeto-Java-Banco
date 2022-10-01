@@ -1,20 +1,21 @@
 package caixa_geral.application;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import caixa_geral.options.account_operations;
 import caixa_geral.options.atm_operations;
 
 
+
 public class App {
     public static int password_admin[] = new int[1]; 
     public static int password_filho[] = new int[6];
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int option;
-
+        int contador = 0;   
         atm_operations caixa_operacao = new atm_operations();
         account_operations conta_operacao = new account_operations();
         // Inicialização de senhas para identificação dos filhos e do ADM
@@ -26,7 +27,7 @@ public class App {
             }
         password_admin[0] = p_admin;
 
-
+        //INICIO DA OPERAÇÃO
         do{
             System.out.println("            CAIXA ELETRÔNICO");
             System.out.println("Para utilização da conta, você precisa escolher o tipo de conta*");
@@ -39,9 +40,10 @@ public class App {
             if(option == 1){
                 int senha_digitada;
                 int libera_acesso_admin = 1;  
-                int opcao_movimentacao_admin;
+                int opcao_movimentacao_admin = 1;
       
                     while(libera_acesso_admin != 0){
+                        System.out.println(password_admin[0]);
                         System.out.println("DIGITE SUA SENHA:");
                             senha_digitada = sc.nextInt();
         
@@ -50,22 +52,23 @@ public class App {
                             System.out.printf("NOVAMENTE ");
                             libera_acesso_admin = 0;
                         }else{
-                            libera_acesso_admin = 1;
                             System.out.println("Acesso liberado, bem vindo cliente " + password_admin[0]);
-                            System.out.println("GERENCIAMENTO");
-                            System.out.println("1 -- CONTA BLOQUEADAS");
-                            System.out.println("2 -- REPOR NOTAS");
-                            System.out.println("0 -- ENCERRAR");
-                                opcao_movimentacao_admin = sc.nextInt();
-
-                            if(opcao_movimentacao_admin == 1){
-                               // System.out.println(getContas_bloqueadas());
-                            }
-                            if(opcao_movimentacao_admin == 2){
-                               libera_acesso_admin = caixa_operacao.repor_notas(caixa_operacao.getNotas_dois(), caixa_operacao.getNotas_dez(), caixa_operacao.getNotas_vinte(), caixa_operacao.getNotas_cinquenta(), caixa_operacao.getSaldo_atual());
-                            }   
-                            if(opcao_movimentacao_admin == 0){
-                                libera_acesso_admin = 0;
+                            while(opcao_movimentacao_admin != 0){
+                                libera_acesso_admin = 1;
+                                System.out.println("GERENCIAMENTO");
+                                System.out.println("1 -- CONTA BLOQUEADAS");
+                                System.out.println("2 -- REPOR NOTAS");
+                                System.out.println("0 -- ENCERRAR");
+                                    opcao_movimentacao_admin = sc.nextInt();
+                                if(opcao_movimentacao_admin == 1){
+                                    // System.out.println(getContas_bloqueadas());
+                                }
+                                if(opcao_movimentacao_admin == 2){
+                                    libera_acesso_admin = caixa_operacao.repor_notas(caixa_operacao.getNotas_dois(), caixa_operacao.getNotas_dez(), caixa_operacao.getNotas_vinte(), caixa_operacao.getNotas_cinquenta(), caixa_operacao.getSaldo_atual());
+                                }   
+                                if(opcao_movimentacao_admin == 0){
+                                    libera_acesso_admin = 0;
+                                }
                             }
                         }
                     }
@@ -73,13 +76,8 @@ public class App {
                 int k =0;
                 int libera_acesso_user = 0;
                 int senha_digitada;
-                int contador = 0;
                 int opcao_encerrar = 1;
                 int opcao_movimentacao;
-                    while(k!=5){
-                        System.out.println(password_filho[k]);
-                        k++;
-                    }
                     while(libera_acesso_user != 1 && contador != 3){
                         System.out.println("DIGITE SUA SENHA:");
                             senha_digitada = sc.nextInt();
@@ -105,7 +103,7 @@ public class App {
                                     caixa_operacao.saque();
                                 }
                                 if(opcao_movimentacao == 2){
-                                    System.out.println(conta_operacao.getSaldo_user());
+                                    System.out.println(conta_operacao.getSaldo_user(password_filho[k]));
                                 }
                                 if(opcao_movimentacao == 3){
                                     conta_operacao.deposito(password_filho[k]);
@@ -119,6 +117,9 @@ public class App {
                                 }
                             }
                         }
+                    }
+                    if(contador == 3){
+                        System.out.println("ACESSO DE CONTAS DOS DEPENDENTE BLOQUEADO. Contate-o o titular para que libere o acesso*");
                     }
                 }else if(option == 0){
                 sc.close();
