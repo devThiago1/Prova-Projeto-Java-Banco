@@ -1,8 +1,8 @@
 package caixa_geral.application;
 import java.util.Scanner;
 
-import caixa_geral.notas.account_operations;
-import caixa_geral.notas.atm_operations;
+import caixa_geral.options.account_operations;
+import caixa_geral.options.atm_operations;
 
 
 public class App {

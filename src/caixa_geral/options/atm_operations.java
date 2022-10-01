@@ -1,4 +1,4 @@
-package caixa_geral.notas;
+package caixa_geral.options;
 import java.util.Scanner;
 
  
