@@ -1,7 +1,9 @@
-package caixa_geral.telas;
+package caixa_geral.application;
 import java.util.Scanner;
+import caixa_geral.notas.Saque;
 
-import caixa_geral.notas.Contagem;
+
+
 
 public class Admin {
     Scanner sc = new Scanner(System.in);
@@ -21,8 +23,7 @@ public class Admin {
     }
 
 
-    Contagem contagem = new Contagem();
-
+    Saque saque = new Saque();
 
 
 
@@ -45,7 +46,7 @@ public class Admin {
         }
 
         if(opcao_movimentacao_admin == 2){
-          repor_notas();
+          saque.repor_notas();
         }
         opcao_encerrar = 1;
 
@@ -77,23 +78,8 @@ public class Admin {
       return libera_acesso_admin;
     }
 
-    public int repor_notas(){
-        int repor;
-        int notas_dois_repor = 20 - (contagem.getNotas_dois() / 2);
-        int notas_dez_repor = 20 - (contagem.getNotas_dez() / 10);
-        int notas_vinte_repor = 20 - (contagem.getNotas_vinte() / 20);
-        int notas_cinquenta_repor = 20 - (contagem.getNotas_cinquenta() / 50);
+  }
 
-          System.out.println("NOTAS FALTOSAS");
-          System.out.println("R$2: " + notas_dois_repor);
-          System.out.println("R$10: " + notas_dez_repor);
-          System.out.println("R$20: " + notas_vinte_repor);
-          System.out.println("R$50: " + notas_cinquenta_repor);
-          System.out.println("PARA REPOR TODAS AUTOMATICAMENTE, DIGITE 1");
-            repor = sc.nextInt();
-          if(repor == 1){
-            contagem.repor_notas_totais();
-          }
-    return 1;
-    }
-}
+
+
+

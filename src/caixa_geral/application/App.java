@@ -1,9 +1,6 @@
 package caixa_geral.application;
 import java.util.Scanner;
 
-import caixa_geral.telas.Admin;
-import caixa_geral.telas.User;
-
 
 public class App {
 
@@ -25,8 +22,6 @@ public class App {
                 p_user = p_user + 1111;
             }
             titular.password_admin[0] = p_admin;
-
-            
 
 
         opcao = 1;

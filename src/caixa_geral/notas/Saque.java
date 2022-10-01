@@ -1,13 +1,9 @@
 package caixa_geral.notas;
 import java.util.Scanner;
 
-import caixa_geral.application.App;
  
 
 public class Saque{
-    App app = new App();
-    Saldo saldo = new Saldo();
-    Contagem contagem = new Contagem();
     public int valor_saque;
     private int saldo_atual = 1640;
     
@@ -19,7 +15,72 @@ public class Saque{
         this.saldo_atual -= saldo_atual;
     }
 
+    private int notas_dois ;
+    private int notas_dez ;
+    private int notas_vinte ;
+    private int notas_cinquenta ;
+    public Saque(){
+        this.notas_dois = 40;
+        this.notas_dez = 200;
+        this.notas_vinte = 400;
+        this.notas_cinquenta = 1000;
+    }
+    public void repor_notas_totais(){
+        this.notas_dois = 40;
+        this.notas_dez = 200;
+        this.notas_vinte = 400;
+        this.notas_cinquenta = 1000;
+    }
+    public int getNotas_dois() {
+        return notas_dois;
+    }
+    public void setNotas_dois(int notas_dois) {
+        this.notas_dois -= notas_dois;
+    }
+    public int getNotas_dez() {
+        return notas_dez;
+    }
+    public void setNotas_dez(int notas_dez) {
+        this.notas_dez -= notas_dez;
+    }
+    public int getNotas_vinte() {
+        return notas_vinte;
+    }
+    public void setNotas_vinte(int notas_vinte) {
+        this.notas_vinte -= notas_vinte;
+    }
+    public int getNotas_cinquenta() {
+        return notas_cinquenta;
+    }
+    public void setNotas_cinquenta(int notas_cinquenta) {
+        this.notas_cinquenta -= notas_cinquenta;
+    }
+
+
+    public int repor_notas(){
+        Saque saque = new Saque();
+        Scanner sc = new Scanner(System.in);
+        int repor;
+        int notas_dois_repor = 20 - (saque.getNotas_dois() / 2);
+        int notas_dez_repor = 20 - (saque.getNotas_dez() / 10);
+        int notas_vinte_repor = 20 - (saque.getNotas_vinte() / 20);
+        int notas_cinquenta_repor = 20 - (saque.getNotas_cinquenta() / 50);
+
+          System.out.println("NOTAS DISPONÍVEIS");
+          System.out.println("R$2: " + notas_dois_repor);
+          System.out.println("R$10: " + notas_dez_repor);
+          System.out.println("R$20: " + notas_vinte_repor);
+          System.out.println("R$50: " + notas_cinquenta_repor);
+          System.out.println("PARA REPOR TODAS AUTOMATICAMENTE, DIGITE 1");
+            repor = sc.nextInt();
+          if(repor == 1){
+            repor_notas_totais();
+          }
+    return 1;
+    }
+
     public int main(){
+        Saque saque = new Saque();
         Scanner sc = new Scanner(System.in);  
         int valida_valor = 0;
         int valida_saque = 0;
@@ -33,16 +94,16 @@ public class Saque{
         System.out.println("Digite o valor do saque: ACEITAMOS APENAS SAQUE DE VALORES PARES*");
             valor_saque = sc.nextInt();
         System.out.println("Notas disponíveis:");
-            if(contagem.getNotas_dois() != 0){
+            if(saque.getNotas_dois() != 0){
                 System.out.println("2");
             }
-            if(contagem.getNotas_dez() != 0){
+            if(saque.getNotas_dez() != 0){
                 System.out.println("10");
             }
-            if(contagem.getNotas_vinte() != 0){
+            if(saque.getNotas_vinte() != 0){
                 System.out.println("20");
             }
-            if(contagem.getNotas_cinquenta() != 0){
+            if(saque.getNotas_cinquenta() != 0){
                 System.out.println("50");
             }
         System.out.println("Digite em quantas notas você deseja receber o valor do saque");
@@ -72,14 +133,14 @@ public class Saque{
             }
 
             //validador de saque
-            if(valida_valor != valor_saque || contagem.getNotas_dois() < (q_notaDois * 2) || contagem.getNotas_dez() < (q_notaDez *10) || contagem.getNotas_vinte() < (q_notaVinte * 20) || contagem.getNotas_cinquenta() < (q_notaCinquenta * 50)){
+            if(valida_valor != valor_saque ||  saque.getNotas_dois() < (q_notaDois * 2) || saque.getNotas_dez() < (q_notaDez *10) || saque.getNotas_vinte() < (q_notaVinte * 20) || saque.getNotas_cinquenta() < (q_notaCinquenta * 50)){
                 valida_saque = 0;
                 System.out.println("ERRO* saque inválido");
             }else{
-                contagem.setNotas_dois(valor_dois);
-                contagem.setNotas_dez(valor_dez);
-                contagem.setNotas_vinte(valor_vinte);
-                contagem.setNotas_cinquenta(valor_cinquenta);
+                saque.setNotas_dois(valor_dois);
+                saque.setNotas_dez(valor_dez);
+                saque.setNotas_vinte(valor_vinte);
+                saque.setNotas_cinquenta(valor_cinquenta);
                 System.out.println("Saque efetuado com sucesso");
                 valida_saque = 1;
                 setSaldo_atual(valor_saque);

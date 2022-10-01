@@ -1,10 +1,8 @@
-package caixa_geral.telas;
+package caixa_geral.application;
 import java.util.Scanner;
 
-import caixa_geral.application.App;
-import caixa_geral.notas.Contagem;
 import caixa_geral.notas.Deposito;
-import caixa_geral.notas.Saldo;
+
 import caixa_geral.notas.Saque;
 
  
@@ -18,8 +16,6 @@ public class User {
 
     Admin adm = new Admin();
     Saque saque_user = new Saque();
-    Contagem contagem = new Contagem();
-    Saldo saldo = new Saldo();
     App app = new App();
     Deposito deposito = new Deposito();
 
