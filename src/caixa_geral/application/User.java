@@ -1,9 +1,9 @@
-package caixa_geral.application;
+/*package caixa_geral.application;
 import java.util.Scanner;
 
-import caixa_geral.notas.Deposito;
+import caixa_geral.notas.account_operations;
 
-import caixa_geral.notas.Saque;
+import caixa_geral.notas.atm_operations;
 
  
 public class User {
@@ -15,12 +15,12 @@ public class User {
     public int saque;
 
     Admin adm = new Admin();
-    Saque saque_user = new Saque();
+    atm_operations saque_user = new atm_operations();
     App app = new App();
-    Deposito deposito = new Deposito();
+    account_operations deposito = new account_operations();
 
 
-    public int main(){
+    public int menu_user(){
         Scanner sc = new Scanner(System.in);        
         libera_acesso_user = 0;
         k = 0;
@@ -47,6 +47,9 @@ public class User {
                 }
                 if(opcao_movimentacao == 3){
                     deposito.main(password_filho[k]);
+                }
+                if(opcao_movimentacao == 4){
+                    saque_user.repor_notas(saque_user.getNotas_dois(), saque_user.getNotas_dez(), saque_user.getNotas_vinte(), saque_user.getNotas_cinquenta());
                 }
                 if(opcao_movimentacao == 0){
                     opcao_encerrar = 0;
@@ -96,3 +99,4 @@ public class User {
     return libera_acesso_user;
     }
 }
+*/

@@ -1,6 +1,6 @@
-package caixa_geral.application;
+/*package caixa_geral.application;
 import java.util.Scanner;
-import caixa_geral.notas.Saque;
+import caixa_geral.notas.atm_operations;
 
 
 
@@ -23,11 +23,11 @@ public class Admin {
     }
 
 
-    Saque saque = new Saque();
+    atm_operations saque = new atm_operations();
 
 
 
-    public int main(){
+    public int menu_admin(){
       int opcao_movimentacao_admin;
 
       System.out.println(password_admin[0]);
@@ -46,7 +46,6 @@ public class Admin {
         }
 
         if(opcao_movimentacao_admin == 2){
-          saque.repor_notas();
         }
         opcao_encerrar = 1;
 
@@ -60,7 +59,7 @@ public class Admin {
     public int login_admin(){
       
       int senha_digitada;
-      libera_acesso_admin = 0;
+      int libera_acesso_admin = 0;
       
       while(libera_acesso_admin != 1){
         System.out.println("DIGITE SUA SENHA:");
@@ -79,7 +78,7 @@ public class Admin {
     }
 
   }
-
+*/
 
 
 
